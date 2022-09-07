@@ -84,7 +84,7 @@ button#showLeftPush {
 	outline:none;
 }
 button#showLeftPush:hover {
-    color: #6164C1;
+    color: linear-gradient(120deg,#AF727D, #E4B08D)
 }
 /*--push-menu-css--*/
 .cbp-spmenu {
@@ -248,23 +248,23 @@ ul.dropdown-menu{
     margin: 0;
     z-index: 10;
     font-size: 0.9em;
-    color: #6164C1;
+    color: linear-gradient(120deg,#AF727D, #E4B08D);
     padding: 0.5em 1em;
 	border: 2px solid rgba(79, 82, 186, 0.3);
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 	font-family: 'Roboto Condensed', sans-serif;
 }
 .sb-search-input::-webkit-input-placeholder {
-	color:#6164C1;
+	color:v
 }
 .sb-search-input:-moz-placeholder {
-	color: #6164C1;
+	color: linear-gradient(120deg,#AF727D, #E4B08D)
 }
 .sb-search-input::-moz-placeholder {
-	color: #6164C1;
+	color:linear-gradient(120deg,#AF727D, #E4B08D)
 }
 .sb-search-input:-ms-input-placeholder {
-	color: #6164C1;
+	color: linear-gradient(120deg,#AF727D, #E4B08D)
 }
 .input__label {
 	-webkit-font-smoothing: antialiased;
@@ -837,7 +837,7 @@ ul.dropdown-menu.drp-mnu li {
 .stats-left {
     float: left;
     width: 70%;
-    background-color: #4F52BA;
+    background-color: #AF727D;
 	text-align: center;
 	padding: 1em;
 }
@@ -848,17 +848,17 @@ ul.dropdown-menu.drp-mnu li {
     background-color: rgba(88, 88, 88, 0.88);
 }
 .states-last .stats-left {
-    background-color: #e94e02;
+    background-color: #AF727D;
 }
 .states-last .stats-right {
-    background-color: rgba(233, 78, 2, 0.84);
+    background-color: #E4B08D;
 }
 .stats-right {
     float: right;
     width: 30%;
     text-align: center;
 	padding: 1.54em 1em;
-	background-color: rgba(79, 82, 186, 0.88);
+	background-color: #E4B08D;
 }
 .stats-left h5 {
     color: #fff;
@@ -2371,7 +2371,7 @@ i.fa.fa-facebook.profile-icon {
 .header-top {
     border-bottom: 3px solid rgba(97, 100, 193, 0.56);
     padding: 1.5em;
-    background-color: rgba(97, 100, 193, 0.71);
+    background: linear-gradient(120deg,#E4B08D,#AF727D );
 }
 .header-top h2 {
     float: left;

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg,#AF727D, #E4B08D);
+    background: linear-gradient(120deg, #AF727D, #E4B08D);
     font-family: 'Inter', sans-serif;
     height: 100vh;
     overflow: hidden;
@@ -61,6 +61,18 @@ body {
 
         // }
 
-        .login {}
+        .login {
+            width: 100%;
+            height: 50px;
+            border: 1px solid;
+            background: linear-gradient(120deg, #AF727D, #E4B08D);
+            border-radius: 25px;
+            font-size: 18px;
+            color: #e9f4fb;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            margin: 20px 0 20px;
+        }
     }
 }
