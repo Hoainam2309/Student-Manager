@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #AF727D, #E4B08D);
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .center {
   position: absolute;
   top: 50%;
@@ -6,11 +15,6 @@
   width: 400px;
   background: white;
   border-radius: 10px;
-}
-.center .h1 {
-  text-align: center;
-  padding: 0 0 20px 0;
-  border-bottom: 1px solid silver;
 }
 .center .form {
   padding: 0 40px;

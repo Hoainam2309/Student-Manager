@@ -1,3 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg,#AF727D, #E4B08D);
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
 .center {
     position: absolute;
     top: 50%;
