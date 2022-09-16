@@ -135,3 +135,9 @@ document.querySelector("#btnSapXepTang").onclick = function () {
 
   document.querySelector("#dtbTang").innerHTML = "Điểm: " + arrDiemSX;
 };
+
+
+
+
+
+
