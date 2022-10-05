@@ -1,18 +1,18 @@
 var mangSinhVien = []; // [sv1,sv2,sv3] => [{maSinhVien:'01',tenSinhVien:'nguyenvana'}, {maSinhVien:'02',tenSinhVien:'nguyenvanb'},...]
 //                                                  0                                       1               
-document.querySelector('#btnThemSinhVien').onclick = function () {
-    //input: thông tin sinh viên: SinhVien
+ function newStudent() {
+    // input: thông tin sinh viên: SinhVien
     var sv = new SinhVien();
     //Lấy thông tin từ giao diện đưa vào input sv
     sv['maSinhVien'] = document.querySelector('#maSinhVien').value;
     sv.tenSinhVien = document.querySelector('#tenSinhVien').value;
     sv.email = document.querySelector('#email').value;
-    sv.matKhau = document.querySelector('#matKhau').value;
     sv.khoaHoc = document.querySelector('#khoaHoc').value;
     //11-01-1999
-    var ngaySinh = new Date(document.querySelector('#ngaySinh').value);
-    // console.log(  ngaySinh.toLocaleDateString());
-    sv.ngaySinh = ngaySinh.toLocaleDateString();
+    var ngaySinh = (document.querySelector('#ngaySinh').value);
+    
+    // console.log( document.querySelector('#ngaySinh').value);
+    sv.ngaySinh = ngaySinh;
     sv.diemToan = document.querySelector('#diemToan').value;
     sv.diemLy = document.querySelector('#diemLy').value;
     sv.diemHoa = document.querySelector('#diemHoa').value;
@@ -24,7 +24,7 @@ document.querySelector('#btnThemSinhVien').onclick = function () {
     //Sau khi thêm 1 sinh viên => mảng có sinh viên [{},{}]
     renderTableSinhVien(mangSinhVien);
 
-}
+};
 
 
 function renderTableSinhVien(arrSinhVien) { //input: arrSinhVien: [{},{},{}]
