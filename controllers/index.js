@@ -24,6 +24,11 @@ var mangSinhVien = []; // [sv1,sv2,sv3] => [{maSinhVien:'01',tenSinhVien:'nguyen
     //Sau khi thêm 1 sinh viên => mảng có sinh viên [{},{}]
     renderTableSinhVien(mangSinhVien);
 
+ let sMangSinhVien = JSON.stringify(mangSinhVien);
+ saveLocalStorage('mangSinhVien', sMangSinhVien);
+
+ 
+
 };
 
 
@@ -41,9 +46,10 @@ function renderTableSinhVien(arrSinhVien) { //input: arrSinhVien: [{},{},{}]
                 <td>${sv.email}</td>
                 <td>${sv.ngaySinh}</td>
                 <td>${sv.khoaHoc}</td>
-                <td>${sv.tinhDiemTrungBinh()}</td>
+                <td></td>
                 <td>
                     <button class="btn btn-danger" onclick="xoaSinhVien('${index}')">Xoá</button>
+                    <button class="btn btn-danger ml-2" onclick="xoaSinhVienTheoMa('${sv.maSinhVien}')">Xoá Mã SV</button>
                     <button class="btn btn-primary ml-2">Sửa</button>
                 </td>
             </tr>
@@ -62,3 +68,52 @@ function xoaSinhVien(index) {
     
     renderTableSinhVien(mangSinhVien);
 }
+
+//mảng sinh viên = [0,1,2,3,4,5,6,7,8,9,10,11,12]
+function xoaSinhVienTheoMa(maSV) {
+    
+    let viTriXoa = -1;
+    for(var i = 0; i < mangSinhVien.length; i++){
+        let sinhVien = mangSinhVien[i];
+        if(sinhVien.maSinhVien == maSV) {
+            viTriXoa = i;
+        }
+    }
+    
+   mangSinhVien.splice(viTriXoa,1);
+   renderTableSinhVien(mangSinhVien);
+}
+
+//Xóa
+
+// function XoaSinhVienGiongMa(maSv) {
+//     let viTriXoa = -1;
+//     for(var i = mangSinhVien.length -1;i >= 0; i--) {
+//         let sinhVien = mangSinhVien[i];
+//         if(sinhVien.mangSinhVien == maSv) {
+//             mangSinhVien.splice(viTriXoa,1);
+//         }
+//     }
+//     renderTableSinhVien(mangSinhVien);
+// }
+
+function saveLocalStorage (key,value) {
+    localStorage.setItem(key,value);
+}
+
+function getLocalStorage (key) {
+if(localStorage.getItem(key)) {
+    return localStorage.getItem(key)
+}
+return undefined;
+
+}
+
+
+// window.onload = function () {
+//     var value = getLocalStorage('mangSinhVien');
+//     if(value !== undefined) {
+//         mangSinhVien = JSON.parse(value);
+//         renderTableSinhVien(mangSinhVien);
+//     }
+// }
