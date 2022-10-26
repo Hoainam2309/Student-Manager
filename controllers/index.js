@@ -38,7 +38,20 @@ function renderTableSinhVien(arrSinhVien) { //input: arrSinhVien: [{},{},{}]
     //Duyệt qua các object của mảng sinh viên
     for(var index = 0 ; index < arrSinhVien.length; index ++) {
         var sv = arrSinhVien[index]; //Mỗi lần duyệt lấy ra 1 object thứ index của arrSinhVien [{0},{1},{2}]
+        //Nếu bấm từ nút thêm (new từ SinhVien => nên sẽ có tinhDiemTrungBinh)
+        //Nếu lấy từ localStorage thì bị mất phương thức tinhDiemTrungBinh
+        //hasOwnProperty('tinhDiemTrugnBinh'): nếu có tên thuộc tính đó trong object thì trả về giá trị true, không có trẻ về false
+        //  if(!sv.hasOwnProperty('tinhDiemTrungBinh')){
+        //     //.__proto__. : mở rộng thuộc tính của object
+        //      sv.__proto__.tinhDiemTrungBinh =  function () {
+        //         var diemTB = (Number(sv.diemToan) + Number(sv.diemLy) + Number(sv.diemHoa) ) / 3;
+        //         return diemTB;
+        //     }
+            
+        //  }
+
         //Từ object tạo ra thẻ tr
+       
         var tr = `
             <tr>
                 <td>${sv.maSinhVien}</td>
@@ -46,7 +59,7 @@ function renderTableSinhVien(arrSinhVien) { //input: arrSinhVien: [{},{},{}]
                 <td>${sv.email}</td>
                 <td>${sv.ngaySinh}</td>
                 <td>${sv.khoaHoc}</td>
-                <td></td>
+                <td>${sv.tinhDiemTrungBinh()}</td>
                 <td>
                     <button class="btn btn-danger" onclick="xoaSinhVien('${index}')">Xoá</button>
                     <button class="btn btn-danger ml-2" onclick="xoaSinhVienTheoMa('${sv.maSinhVien}')">Xoá Mã SV</button>
@@ -96,6 +109,23 @@ function xoaSinhVienTheoMa(maSV) {
 //     }
 //     renderTableSinhVien(mangSinhVien);
 // }
+
+
+// var svLocalStorage = {
+//     maSinhVien: 1,
+//     tinhDiemTrungBinh: function () {
+//         console.log(321);
+//     }
+// }
+
+// svLocalStorage.__proto__.tinhDiemTrungBinh = function () {
+//     console.log(134);
+// }
+
+// svLocalStorage.tinhDiemTrungBinh();
+// console.log(svLocalStorage);
+
+
 
 function saveLocalStorage (key,value) {
     localStorage.setItem(key,value);
